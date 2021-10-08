@@ -8,7 +8,7 @@
                                            Navigation bar        
     ----------------------------------------------------------------------------------------->
     <!-- External file -->
-    <?php include '../navbar.html'?>
+    <?php include 'navbar.html'?>
     
     <!----------------------------------------------------------------------------------------
                                               Summary       
@@ -32,7 +32,7 @@
     <div class="section container-fluid">
         <div class="slide row row-eq-height">
             <div class="slide-img-small col col-12 col-lg-6">
-                <img src="../images/handshake.png">
+                <img src="images/handshake.png">
             </div>
             <div class="slide-text col col-12 col-lg-5">
                 <div class="jumbotron bg-white">
@@ -51,7 +51,7 @@
 
         <div class="slide-reverse row row-eq-height">
             <div class="slide-img-small col col-12 col-lg-6">
-                <img src="../images/presentation.png">
+                <img src="images/presentation.png">
             </div>
             <div class="slide-text col col-12 col-lg-5">
                 <div class="jumbotron bg-white">
@@ -85,4 +85,4 @@
     <!----------------------------------------------------------------------------------------
                                                Footer        
     ----------------------------------------------------------------------------------------->
-    <?php include '../footer.html'?>
+    <?php include 'footer.html'?>
