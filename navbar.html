@@ -1,0 +1,89 @@
+<!--------------------------------------------------------------------------------------------
+    Fichier: navbar.html
+    Auteur: Alexandre Gilbert
+    Description: Barre de navigation modulaire pour toutes les pages du site.
+--------------------------------------------------------------------------------------------->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utopia - Expert en recrutement</title>
+
+    <!----------------------------------------------------------------------------------------
+                                            FONTS        
+    ----------------------------------------------------------------------------------------->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    
+    <!----------------------------------------------------------------------------------------
+                                             CSS        
+    ----------------------------------------------------------------------------------------->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="https://agilbert.dev/utopia/css/bootstrap.min.css" />
+    <!-- Less -->
+    <link rel="stylesheet/less" type="text/css" href="https://agilbert.dev/utopia/css/style.less" />
+</head>
+<body onload="setActivePage()">
+    
+    <!----------------------------------------------------------------------------------------
+                                               Alerte        
+    ----------------------------------------------------------------------------------------->
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong class="alert-msg">Site web en construction</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <!----------------------------------------------------------------------------------------
+                                             Navigation        
+    ----------------------------------------------------------------------------------------->
+    <nav class="navbar navbar-light navbar-expand-lg">
+        <div class="container-fluid">
+            <!-- Logo -->
+            <a class="navbar-brand brand-name" href="https://agilbert.dev/utopia/index.php">
+                <img class="logo" src="https://agilbert.dev/utopia/images/logo.png">
+                <div class="name-desc">
+                    <p class="name">topia, l'anti-agence</p>
+                    <p class="desc text-right">Expert en recrutement</p>
+                </div>
+            </a>
+            <!-- Bouton du menu -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuOptions">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Éléments du menu -->
+            <div class="collapse navbar-collapse" id="menuOptions">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item" id="navLink0">
+                        <a class="nav-link" href="https://agilbert.dev/utopia/index.php">Accueil <span class="sr-only">(page actuelle)</span></a>
+                    </li>
+                    <li class="nav-item" id="navLink1">
+                        <a class="nav-link" href="https://agilbert.dev/utopia/pages/candidates.php">Candidats</a>
+                    </li>
+                    <li class="nav-item" id="navLink2">
+                        <a class="nav-link" href="https://agilbert.dev/utopia/pages/employers.php">Employeurs</a>
+                    </li>
+                    <li class="nav-item" id="navLink3">
+                        <a class="nav-link" href="https://agilbert.dev/utopia/pages/services.php">Services</a>
+                    </li>
+                    <li class="nav-item" id="navLink4">
+                        <a class="nav-link" href="https://agilbert.dev/utopia/pages/about.php">À propos</a>
+                    </li>
+                    <li class="nav-item" id="navLink5">
+                        <a class="nav-link" href="https://agilbert.dev/utopia/pages/contact.php">Nous contacter</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item register" id="navLink6">
+                        <a class="nav-link" href="https://agilbert.dev/utopia/pages/register.php">Inscription</a>
+                    </li>
+                    <li class="nav-item login" id="navLink7">
+                        <a class="nav-link" href="https://agilbert.dev/utopia/pages/login.php">Connexion</a>
+                    </li>
+                </ul>
+            </div>
+        </div> 
+    </nav>
+    <div class="wrapper">

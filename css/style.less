@@ -1,0 +1,548 @@
+/*--------------------------------------------------------------------------------------------
+    File: style.less
+    Author: Alexandre Gilbert
+    Description: Style worksheet containing all custom css code, written using Less, 
+                 before preprocessing into css file.
+--------------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------
+                                          Variables
+--------------------------------------------------------------------------------------------*/
+/* Color Palette */
+@gray: #464646;
+@lt-gray: #dfdfdf;
+@dk-blue:#00569c;
+@lt-blue:#00a8c5;
+@turquoise:#00d9ff;
+@yellow-green:#b0ff30;
+@neon-green:#69eb23;
+
+/* Background Images URL */
+@homepage: '../images/homepage.jpg';
+
+/* Screen Size Breakpoints */
+@sm: 576px;
+@md: 768px;
+@lg: 992px;
+@xl: 1200px;
+
+/*--------------------------------------------------------------------------------------------
+                                          Box sizing
+--------------------------------------------------------------------------------------------*/
+/* The padding won't expand boxes anymore */
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+/*--------------------------------------------------------------------------------------------
+                                            Fonts
+--------------------------------------------------------------------------------------------*/
+/* Main Font */
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    color: @gray;
+}
+
+.lead {
+    font-weight: 300;
+}
+
+/* Titles Font */   
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Assistant', sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.display-4 {
+    font-weight: 200;
+}
+
+/*--------------------------------------------------------------------------------------------
+                                            Text
+--------------------------------------------------------------------------------------------*/
+/* Text Colors */
+.txt-blue {
+    color: @dk-blue;
+}
+
+.txt-white {
+    color: white;
+} 
+
+.txt-lgray {
+    color: @lt-gray;
+}
+
+/*--------------------------------------------------------------------------------------------
+                                           Buttons
+--------------------------------------------------------------------------------------------*/
+.btn {
+    margin: 1rem 0;
+    height: 3rem;
+    width: 200px;
+    border: none;
+    border-radius: 0px;
+}
+
+.btn-center {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.btn-primary {
+    background-color: @lt-blue;
+    .txt-white();
+}
+
+.btn-primary:hover {
+    background-color: @dk-blue
+}
+
+/*--------------------------------------------------------------------------------------------
+                                          Containers
+--------------------------------------------------------------------------------------------*/
+/* No-Margin, No-Padding */
+.no-gap {
+    margin: 0;
+    padding: 0;
+}
+
+/* Containers */
+.container-fluid {
+    .no-gap();
+}
+
+/* Rows */
+.row {
+    .no-gap();
+}
+
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Columns */
+.col {
+    .no-gap();
+    float:left;
+}
+
+/* Background-colors */
+.bg-gray {
+    background-color: @lt-gray;
+}
+
+.bg-green {
+    background-color: @yellow-green;
+}
+
+.bg-blue {
+    background-color: @turquoise;
+}
+
+.bg-white {
+    background-color: white;
+}
+
+/* Fixed background-images */
+.img-fixed {
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/*--------------------------------------------------------------------------------------------
+                                        Content Sections
+--------------------------------------------------------------------------------------------*/
+/* Sections spacing */
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 0;
+}
+
+/* Section title */
+.section-title {
+    margin: 0 auto 3rem;
+    padding: 0 3rem;
+    min-height: 6rem;
+
+    /* Medium Screen */
+    @media (min-width: @md) {
+        text-align: center;
+    }
+
+    /* Large Screen */
+    @media (min-width: @lg) {
+        margin: auto;
+        max-width: 65%;
+    }
+}
+
+/* Section blockquote */
+.blockquote {
+    margin-top: 1.5rem;
+}
+.section-quote {
+    margin: 0 auto;
+    max-width: 60%;
+
+    /* Large Screen */
+    @media (min-width: @lg) {
+        margin-top: 3rem;
+        max-width: 40%;
+    }
+}
+
+/* Section paragraph */
+.section-paragraph {
+    margin: 3rem auto 0;
+    max-width: 75%;
+
+    /* Large Screen */
+    @media (min-width: @lg) {
+        max-width: 45%;
+    }
+}
+
+/* Section list */
+.section-list {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.list-group {
+    /* List element */
+    li {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border: none;
+    }
+
+    /* List element icon */
+    img {
+        margin: 0 1.5rem;
+        height: 64px;
+        width: 64px;
+    }
+}
+
+/* Section forms */
+.section-form {
+    padding: 1.5rem 0;
+    /* Labels */
+    label {
+        margin: 0 0 0.25rem;
+    }
+    /* Text fields */
+    input {
+        display: block;
+        margin: 0 auto 0.5rem;
+        width: 100%;
+    }
+}
+
+/*--------------------------------------------------------------------------------------------
+                                            Cards
+--------------------------------------------------------------------------------------------*/
+/* Section containing several cards */
+.section-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin: 2rem auto 0;
+    padding: 0;
+    width: 100%;
+
+    /* Large Screen */
+    @media (min-width: @lg) {
+        justify-content: center;
+        max-width: 80%;
+    }
+}
+
+/* Smaller card section */
+.section-cards-narrow {
+    .section-cards();
+
+    /* Large Screen */
+    @media (min-width: @lg) {
+        max-width: 50%;
+    }
+}
+
+/* Card formatting */
+.card {
+    max-width: 400px;
+    border: none;
+    border-radius: 12px;
+
+    /* Card image size */
+    img {
+        height: 64px;
+        width: 64px;
+    }
+
+    /* Cicular-shaped card */
+    .circle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 50%;
+    }
+    
+    /* Outer Circular Frame */
+    .circle-border {
+        .circle();
+        margin: 0 auto 1.5rem;
+        height: 150px;
+        width: 150px;
+        border: 1px solid @dk-blue;
+    }
+    
+    /* Inner Circular Frame */
+    .circle-border h3 {
+        .circle();
+        margin: 0 auto;
+        height: 145px;
+        width: 145px;
+        border: 1px solid @neon-green;
+    }
+}
+
+/* Card image part */
+.card-img-top {
+    padding: 20px;
+}
+
+/* Card title part */
+.card-title {
+    min-height: 6rem;
+    max-height: 9rem;
+}
+
+/* Card text part */
+.card-body {
+    padding: 20px;
+}
+
+/*--------------------------------------------------------------------------------------------
+                                        Navigation Bar
+--------------------------------------------------------------------------------------------*/
+/* Alert bar message */
+.alert {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ff8661;
+}
+
+.alert-msg {
+    width: 100%;
+    text-align: center;
+}
+
+/* Main navigation bar */
+.navbar {
+    padding: 1.5rem .5rem;
+    background-color: white;
+}
+
+/* Brand section containing logo and text */
+.brand-name {
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+/* Brand logo */
+.logo {
+    margin-top: -6px;
+    height: 45px;
+    width: 45px;
+}
+
+/* Brand text container */
+.name-desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    color: @gray;
+}
+
+/* Company name */
+.name {
+    margin: 0;
+    font-size: large;
+    line-height: 1.25rem;
+}
+
+/* Company description */
+.desc {
+    margin: 0;
+    font-size: small;
+    line-height: 1rem;
+}
+
+/* Connection links to the right */
+.register, .signin .signout {
+    justify-self: flex-end;
+}
+
+/*--------------------------------------------------------------------------------------------
+                                            Banner                                           
+--------------------------------------------------------------------------------------------*/
+/* Main banner container */
+.banner {
+    /* Large Screen */
+    @media (min-width: @lg) {
+        display: flex;
+        flex-direction: row-reverse;
+        height: 50vw;
+        max-height: 80vh;
+        overflow: hidden;
+    }
+}
+
+/*--------------------------------------------------------------------------------------------
+                                Side-by-side image/text display                                         
+--------------------------------------------------------------------------------------------*/
+/* Side-by-side hero-text/image */
+.slide {
+    /* Large Screen */
+    @media (min-width: @lg) {
+        display: flex;
+        flex-direction: row-reverse;
+        height: 30vw;
+        max-height: 80vh;
+        overflow: hidden;
+    }
+}
+
+/* Side-by-side hero-image/text */
+.slide-reverse {
+    /* Large Screen */
+    @media (min-width: @lg) {
+        display: flex;
+        flex-direction: row;
+        height: 30vw;
+        max-height: 80vh;
+        overflow: hidden;
+    }
+}
+
+/* Banner jumbotron */
+.intro-slide {
+    color: white;
+}
+
+/* Slide image container */
+.slide-img, .slide-img-small, .slide-text {
+    /* Large Screen */
+    @media (min-width: @lg) {
+        height: 100%;
+    }
+} 
+
+/* Smaller image container */
+.slide-img-small {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Slide image screen scaling */
+.slide-img img {
+    width: 100%;
+
+    /* Large Screen */
+    @media (min-width: @lg) {
+        min-height: 100%;
+        max-height: 110%;
+        width: auto;
+    }
+}
+
+/* Smaller slide image screen scaling */
+.slide-img-small img {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+
+    /* Large Screen */
+    @media (min-width: @lg) {
+        max-height: 100%;
+        width: auto;
+    }
+}
+
+/* Jumbotron formatting */
+.jumbotron {
+    display: flex;
+        flex-direction: column;
+        justify-content: center;  
+    margin: 0;
+    padding: 5rem 2rem 3rem;
+    height: 100%;
+    border-radius: 0;
+
+    /* Large Screen */
+    @media (min-width: @lg) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }   
+}
+
+/*--------------------------------------------------------------------------------------------
+                                       Numbers Section                                           
+--------------------------------------------------------------------------------------------*/
+/* Statistics section */
+.chiffres, .chiffres .card {
+    background-color: @yellow-green;
+}
+
+/*--------------------------------------------------------------------------------------------
+                                           Footer
+--------------------------------------------------------------------------------------------*/
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 4rem;
+    width: 100%;
+    bottom: 0;
+    background-color: @gray;
+}
+
+.copyright p, .copyright a {
+    display: inline;
+    text-decoration: none;
+    color: white;
+}
+
+/*--------------------------------------------------------------------------------------------
+                                      Background Images
+--------------------------------------------------------------------------------------------*/
+/* Homepage */
+.bg-image-homepage-green {
+    background-image: linear-gradient(#b0ff30ee, #b0ff30ee), url(@homepage);
+    .img-fixed();
+    background-position: 50% 0%;
+}
