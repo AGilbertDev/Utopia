@@ -1,2 +1,2 @@
 # Utopia
-Fake recruitment agency website done for a personal project.
+Fictional recruitment agency website done for a personal project. Not related to school.
