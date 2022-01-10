@@ -9,10 +9,10 @@
                                       SQL database connection        
 --------------------------------------------------------------------------------------------*/
 /* Database info */
-$serverName = "sql303.epizy.com";
-$dBUsername = "epiz_27840253";
-$dbPassword = "hQbvbaCZR4";
-$dbName = "epiz_27840253_utopiaDB";
+$serverName = "****************";
+$dBUsername = "**********";
+$dbPassword = "************";
+$dbName = "********";
 
 /* Connection */
 $conn = mysqli_connect($serverName, $dBUsername, $dbPassword, $dbName);
